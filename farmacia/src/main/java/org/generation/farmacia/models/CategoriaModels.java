@@ -3,7 +3,6 @@ package org.generation.farmacia.models;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
-import java.util.Date;
 
 /**
  * Classe utilizada como entidade no banco de dados para a criação das categorias.
@@ -15,47 +14,49 @@ import java.util.Date;
 
 
 @Entity
-@Table(name="produtos")
+@Table(name="categoria")
 public class CategoriaModels {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idCategoria;
 
+    @NotBlank(message = "Nome da Categoria")
+    @Size (min = 5, max = 100)
+    private String nome_categoria;
+
     @NotBlank(message = "Descrição da Categoria")
     @Size (min = 5, max = 100)
     private String descricao;
 
-    @Temporal(TemporalType.TIMESTAMP)
 
-    private Date date = new java.sql.Date(System.currentTimeMillis());
-
-    public CategoriaModels(long idCategoria, String descricao, Date date) {
+    public CategoriaModels(long idCategoria,String nome_categoria, String descricao) {
         this.idCategoria = idCategoria;
         this.descricao = descricao;
-        this.date = date;
+        this.nome_categoria = nome_categoria;
     }
 
     public long getIdCategoria() {
         return idCategoria;
     }
 
-    public void setId(long id) {
-        this.idCategoria = id;
+    public void setIdCategoria(long idCategoria) {
+        this.idCategoria = idCategoria;
     }
 
-    public String getDecricacao() {
+    public String getNome_categoria() {
+        return nome_categoria;
+    }
+
+    public void setNome_categoria(String nome_categoria) {
+        this.nome_categoria = nome_categoria;
+    }
+
+    public String getDescricao() {
         return descricao;
     }
 
-    public void setDecricacao(String decricacao) {
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
 }
+

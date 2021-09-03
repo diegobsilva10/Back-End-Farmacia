@@ -23,14 +23,6 @@ public class ProdutoModels {
 
     @NotBlank (message = "Insira o preço do produto")
     private float preco;
-
-    public ProdutoModels(long idProduto, String nomeProduto, String descricaoProduto, float preco) {
-        this.idProduto = idProduto;
-        this.nomeProduto = nomeProduto;
-        this.descricaoProduto = descricaoProduto;
-        this.preco = preco;
-    }
-
     public long getIdProduto() {
         return idProduto;
     }
