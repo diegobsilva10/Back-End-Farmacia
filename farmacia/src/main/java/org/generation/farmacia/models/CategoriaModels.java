@@ -16,22 +16,22 @@ import java.util.Date;
 
 @Entity
 @Table(name="produtos")
-public class Categoria {
+public class CategoriaModels {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idCategoria;
 
     @NotBlank(message = "Descrição da Categoria")
     @Size (min = 5, max = 100)
-    private String decricacao;
+    private String descricao;
 
     @Temporal(TemporalType.TIMESTAMP)
 
     private Date date = new java.sql.Date(System.currentTimeMillis());
 
-    public Categoria(long idCategoria, String decricacao, Date date) {
+    public CategoriaModels(long idCategoria, String descricao, Date date) {
         this.idCategoria = idCategoria;
-        this.decricacao = decricacao;
+        this.descricao = descricao;
         this.date = date;
     }
 
@@ -44,11 +44,11 @@ public class Categoria {
     }
 
     public String getDecricacao() {
-        return decricacao;
+        return descricao;
     }
 
     public void setDecricacao(String decricacao) {
-        this.decricacao = decricacao;
+        this.descricao = descricao;
     }
 
     public Date getDate() {
