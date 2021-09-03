@@ -7,7 +7,7 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "produto")
-public class Produto {
+public class ProdutoModels {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +24,7 @@ public class Produto {
     @NotBlank (message = "Insira o preço do produto")
     private float preco;
 
-    public Produto(long idProduto, String nomeProduto, String descricaoProduto, float preco) {
+    public ProdutoModels(long idProduto, String nomeProduto, String descricaoProduto, float preco) {
         this.idProduto = idProduto;
         this.nomeProduto = nomeProduto;
         this.descricaoProduto = descricaoProduto;
