@@ -1,8 +1,12 @@
 package org.generation.farmacia.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+
 
 @Entity
 @Table(name = "produto")
@@ -20,8 +24,13 @@ public class ProdutoModels {
     @Size (min=10, max = 200)
     private String descricaoProduto;
 
-    @NotBlank (message = "Insira o preço do produto")
+    @NotNull(message = "Informe o preço")
     private float preco;
+
+    @ManyToOne
+    @JsonIgnoreProperties
+    private CategoriaModels categoriaModels;
+
 
     public long getIdProduto() {
         return idProduto;
@@ -53,5 +62,13 @@ public class ProdutoModels {
 
     public void setPreco(float preco) {
         this.preco = preco;
+    }
+
+    public CategoriaModels getCategoriaModels() {
+        return categoriaModels;
+    }
+
+    public void setCategoriaModels(CategoriaModels categoriaModels) {
+        this.categoriaModels = categoriaModels;
     }
 }
