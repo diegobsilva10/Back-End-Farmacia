@@ -23,6 +23,7 @@ public class ProdutoModels {
 
     @NotBlank (message = "Insira o preço do produto")
     private float preco;
+
     public long getIdProduto() {
         return idProduto;
     }
