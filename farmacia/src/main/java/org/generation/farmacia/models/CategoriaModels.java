@@ -1,8 +1,11 @@
 package org.generation.farmacia.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 /**
  * Classe utilizada como entidade no banco de dados para a criação das categorias.
@@ -28,6 +31,11 @@ public class CategoriaModels {
     @Size (min = 5, max = 100)
     private String descricao;
 
+    @OneToMany(mappedBy = "nomeProduto", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("produto")
+    private List<ProdutoModels> ProdutoModels;
+
+
     public long getIdCategoria() {
         return idCategoria;
     }
@@ -50,6 +58,14 @@ public class CategoriaModels {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public List<ProdutoModels> getProdutoModels() {
+        return ProdutoModels;
+    }
+
+    public void setProdutoModels(List<ProdutoModels> ProdutoModels) {
+        this.ProdutoModels = ProdutoModels;
     }
 }
 
