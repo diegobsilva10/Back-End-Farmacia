@@ -28,13 +28,6 @@ public class CategoriaModels {
     @Size (min = 5, max = 100)
     private String descricao;
 
-
-    public CategoriaModels(long idCategoria,String nome_categoria, String descricao) {
-        this.idCategoria = idCategoria;
-        this.descricao = descricao;
-        this.nome_categoria = nome_categoria;
-    }
-
     public long getIdCategoria() {
         return idCategoria;
     }
