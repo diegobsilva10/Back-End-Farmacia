@@ -22,7 +22,7 @@ public class CategoriaModels {
 
     @NotBlank(message = "Nome da Categoria")
     @Size (min = 5, max = 100)
-    private String nome_categoria;
+    private String nomeCategoria;
 
     @NotBlank(message = "Descrição da Categoria")
     @Size (min = 5, max = 100)
@@ -36,12 +36,12 @@ public class CategoriaModels {
         this.idCategoria = idCategoria;
     }
 
-    public String getNome_categoria() {
-        return nome_categoria;
+    public String getNomeCategoria() {
+        return nomeCategoria;
     }
 
-    public void setNome_categoria(String nome_categoria) {
-        this.nome_categoria = nome_categoria;
+    public void setNomeCategoria(String nomeCategoria) {
+        this.nomeCategoria = nomeCategoria;
     }
 
     public String getDescricao() {
