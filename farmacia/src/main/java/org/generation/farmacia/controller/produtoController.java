@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/produtos")
-@CrossOrigin("*")
+@CrossOrigin(value = "*")
 public class produtoController {
 
     @Autowired
@@ -25,7 +25,8 @@ public class produtoController {
 
     @GetMapping("/{id}")
     public ResponseEntity<ProdutoModels> GetById(@PathVariable long idProduto){
-        return repository.findById(idProduto).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound()
+        return repository.findById(idProduto).map(resp -> ResponseEntity.ok(resp))
+                .orElse(ResponseEntity.notFound()
                 .build());
     }
     @GetMapping("/nomeProduto/{nomeProduto}")
@@ -38,8 +39,8 @@ public class produtoController {
         return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(produtoModels));
     }
     @PutMapping
-    public ResponseEntity<ProdutoModels> put (@RequestBody ProdutoModels produtoModels) {
-        return ResponseEntity.status(HttpStatus.OK).body(repository.save(produtoModels));
+    public ResponseEntity<ProdutoModels> put (@RequestBody ProdutoModels ProdutoModels) {
+        return ResponseEntity.status(HttpStatus.OK).body(repository.save(ProdutoModels));
     }
     @DeleteMapping ("/{id}")
     public void delete (@PathVariable long id){
