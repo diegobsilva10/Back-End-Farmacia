@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface categoriaRepository extends JpaRepository<CategoriaModels, Long>{
-    public List<CategoriaModels> findAllByDescricaoContainingIgnoreCase(String descricao);
+    public List<CategoriaModels> findAllByNomeCategoriaContainingIgnoreCase(String nomeCategoria);
 
 }
