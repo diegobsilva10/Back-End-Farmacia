@@ -33,6 +33,7 @@ public class SwaggerConfig {
 
     private ApiInfo metaInfo() {
 
+
         ApiInfo apiInfo = new ApiInfo(
                 "Farmacia BackEnd API REST",
                 "API REST de cadastro de produtos.",
