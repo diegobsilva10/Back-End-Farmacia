@@ -33,6 +33,7 @@ public class ProdutoModels {
     private CategoriaModels categoriaModels;
 
 
+
     public long getIdProduto() {
         return idProduto;
     }

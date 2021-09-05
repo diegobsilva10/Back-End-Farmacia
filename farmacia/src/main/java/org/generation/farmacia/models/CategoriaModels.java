@@ -23,6 +23,7 @@ public class CategoriaModels {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idCategoria;
 
+
     @NotBlank(message = "Nome da Categoria")
     @Size (min = 5, max = 800)
     private String nomeCategoria;
