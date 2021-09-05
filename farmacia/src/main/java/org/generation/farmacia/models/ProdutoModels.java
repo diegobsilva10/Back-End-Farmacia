@@ -2,6 +2,7 @@ package org.generation.farmacia.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -17,11 +18,11 @@ public class ProdutoModels {
     private long idProduto;
 
     @NotBlank(message = "Nome do produto")
-    @Size (min = 10, max = 200)
+    @Size (min = 10, max = 300)
     private String nomeProduto;
 
     @NotBlank(message = "Insira a descrição do produto")
-    @Size (min=10, max = 200)
+    @Size (min=10, max = 1000)
     private String descricaoProduto;
 
     @NotNull(message = "Informe o preço")

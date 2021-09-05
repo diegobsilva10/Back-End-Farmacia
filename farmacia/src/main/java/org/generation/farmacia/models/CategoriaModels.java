@@ -24,11 +24,11 @@ public class CategoriaModels {
     private long idCategoria;
 
     @NotBlank(message = "Nome da Categoria")
-    @Size (min = 5, max = 100)
+    @Size (min = 5, max = 800)
     private String nomeCategoria;
 
     @NotBlank(message = "Descrição da Categoria")
-    @Size (min = 5, max = 100)
+    @Size (min = 5, max = 800)
     private String descricao;
 
     @OneToMany(mappedBy = "nomeProduto", cascade = CascadeType.ALL)
